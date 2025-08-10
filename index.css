@@ -1,4 +1,13 @@
-td, th {
-    border: 1px solid #dddddd;
-    padding: 8px;
-  }
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  align-content: center;
+  text-align: center;
+}
+
+.column {
+  width: 5rem;
+
+}
