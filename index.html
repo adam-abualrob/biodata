@@ -10,7 +10,7 @@
 
 <body>
     <h1>Form</h1>
-    <form > 
+    <form onsubmit="myFunction('hello')">
         <label for="fname">Name:</label>
         <input type="text" id="fname" name="fname">
         <br><br>
@@ -21,7 +21,7 @@
         <input type="date" id="fbirthday" name="fbirthday">
         <br><br>
         <input type="submit" value="Submit">
-      </form>
+    </form>
     <table>
         <tr>
             <th class="name-column">Name</th>
@@ -87,6 +87,12 @@
             </td>
         </tr>
     </table>
+
+    <script>
+        function myFunction(message) {
+            alert(message);
+        }
+    </script>
 </body>
 
 </html>
