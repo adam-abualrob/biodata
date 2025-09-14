@@ -36,8 +36,8 @@
     <script>
         function getFormValues() {
             const namevalue = document.getElementById('fname').value
-            if (namevalue == "Adam") {
-                alert("name is empty")
+            if (/\d/.test(namevalue)) {
+                alert("please delete the number in name")
             }
             const agevalue = document.getElementById("fage").value
             const birthdayvalue = document.getElementById("fbirthday").value
