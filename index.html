@@ -10,7 +10,7 @@
 
 <body>
     <h1>Form</h1>
-    <form onsubmit=" getFormValues()">
+    <form onsubmit="getFormValues(event)">
         <label for="fname">Name:</label>
         <input type="text" id="fname" name="fname" required>
         <br><br>
@@ -30,20 +30,43 @@
                 <th>Birthday</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+
+        </tbody>
 
     </table>
     <script>
-        function getFormValues() {
-            const namevalue = document.getElementById('fname').value
-            if (/\d/.test(namevalue)) {
+        function getFormValues(event) {
+            event.preventDefault()
+            const name_value = document.getElementById('fname').value
+            if (/\d/.test(name_value)) {
                 alert("please delete the number in name")
             }
-            const agevalue = document.getElementById("fage").value
-            const birthdayvalue = document.getElementById("fbirthday").value
-            const values = namevalue + agevalue + birthdayvalue
+            const age_value = document.getElementById("fage").value
+            const birthday_value = document.getElementById("fbirthday").value
+            // const values = namevalue + agevalue + birthdayvalue
 
-            alert(values);
+            // alert(values);
+            //create new table row
+            const table_body = document.querySelector("tbody");
+            const new_row = document.createElement("tr")
+
+            // Add cells with form values
+            const name_cell = document.createElement("td")
+            name_cell.textContent = name_value
+            const age_cell = document.createElement("td")
+            age_cell.textContent = age_value;
+            const birthday_cell = document.createElement("td")
+            birthday_cell.textcontent = birthday_value;
+            new_row.appendChild(name_cell);
+            new_row.appendChild(age_cell);
+            new_row.appendChild(birthday_cell);
+            table_body.appendChild(new_row)
+
+            //Clear form 
+            document.getElementById('fname').value = "";
+            document.getElementById("fage").value = "";
+            document.getElementById("fbirthday").value = ""; 
         }
     </script>
 
