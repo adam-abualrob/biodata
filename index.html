@@ -17,7 +17,7 @@
         <label for="fage">Age:</label>
         <input type="number" id="fage" name="fage" required>
         <br><br>
-        <label for="fbirthday">Birthday:</label>
+        <label for="fbirthday">birthday:</label>
         <input type="date" id="fbirthday" name="fbirthday" required>
         <br><br>
         <input type="submit" value="Submit">
@@ -27,7 +27,7 @@
             <tr>
                 <th>Name</th>
                 <th>Age</th>
-                <th>Birthday</th>
+                <th>birthday</th>
             </tr>
         </thead>
         <tbody>
@@ -57,7 +57,7 @@
             const age_cell = document.createElement("td")
             age_cell.textContent = age_value;
             const birthday_cell = document.createElement("td")
-            birthday_cell.textcontent = birthday_value;
+            birthday_cell.textContent = birthday_value;
             new_row.appendChild(name_cell);
             new_row.appendChild(age_cell);
             new_row.appendChild(birthday_cell);
