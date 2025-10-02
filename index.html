@@ -22,6 +22,8 @@
         <br><br>
         <input type="submit" value="Submit">
     </form>
+    <button type="button" onclick="deleteTable()">reset</button>
+    <br><br>
     <table>
         <thead>
             <tr>
@@ -30,7 +32,8 @@
                 <th>birthday</th>
             </tr>
         </thead>
-        <tbody>
+
+        <tbody id="tabledata">
 
         </tbody>
 
@@ -41,6 +44,7 @@
             const name_value = document.getElementById('fname').value
             if (/\d/.test(name_value)) {
                 alert("please delete the number in name")
+                return
             }
             const age_value = document.getElementById("fage").value
             const birthday_value = document.getElementById("fbirthday").value
@@ -66,7 +70,10 @@
             //Clear form 
             document.getElementById('fname').value = "";
             document.getElementById("fage").value = "";
-            document.getElementById("fbirthday").value = ""; 
+            document.getElementById("fbirthday").value = "";
+        }
+        function deleteTable() {
+            document.getElementById("tabledata").innerHTML = ""
         }
     </script>
 
